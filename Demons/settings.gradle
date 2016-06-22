@@ -1,1 +1,1 @@
-include ':app', ':smsdemo'
+include ':app', ':smsdemo', ':facebooklogin'
