@@ -1,1 +1,1 @@
-include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch'
+include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch', ':flowlayout'
