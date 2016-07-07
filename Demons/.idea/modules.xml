@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/downloaddemo/downloaddemo.iml" filepath="$PROJECT_DIR$/downloaddemo/downloaddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/facebooklogin/facebooklogin.iml" filepath="$PROJECT_DIR$/facebooklogin/facebooklogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gestureandtouch/gestureandtouch.iml" filepath="$PROJECT_DIR$/gestureandtouch/gestureandtouch.iml" />
       <module fileurl="file://$PROJECT_DIR$/multidownload/multidownload.iml" filepath="$PROJECT_DIR$/multidownload/multidownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/smsdemo/smsdemo.iml" filepath="$PROJECT_DIR$/smsdemo/smsdemo.iml" />
     </modules>
