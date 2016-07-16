@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/login-basic-master" />
             <option value="$PROJECT_DIR$/multidownload" />
             <option value="$PROJECT_DIR$/smsdemo" />
+            <option value="$PROJECT_DIR$/topbaranimation" />
+            <option value="$PROJECT_DIR$/zhihu" />
           </set>
         </option>
         <option name="myModules">
@@ -34,6 +36,8 @@
             <option value="$PROJECT_DIR$/login-basic-master" />
             <option value="$PROJECT_DIR$/multidownload" />
             <option value="$PROJECT_DIR$/smsdemo" />
+            <option value="$PROJECT_DIR$/topbaranimation" />
+            <option value="$PROJECT_DIR$/zhihu" />
           </set>
         </option>
       </GradleProjectSettings>

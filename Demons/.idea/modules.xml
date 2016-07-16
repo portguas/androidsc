@@ -13,6 +13,8 @@
       <module fileurl="file://$PROJECT_DIR$/login-basic-master/login-basic-master.iml" filepath="$PROJECT_DIR$/login-basic-master/login-basic-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/multidownload/multidownload.iml" filepath="$PROJECT_DIR$/multidownload/multidownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/smsdemo/smsdemo.iml" filepath="$PROJECT_DIR$/smsdemo/smsdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topbaranimation/topbaranimation.iml" filepath="$PROJECT_DIR$/topbaranimation/topbaranimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhihu/zhihu.iml" filepath="$PROJECT_DIR$/zhihu/zhihu.iml" />
     </modules>
   </component>
 </project>

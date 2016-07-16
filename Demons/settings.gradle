@@ -1,1 +1,1 @@
-include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch', ':flowlayout', ':line_share', 'login-basic-master', 'line-skd-starter'
+include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch', ':flowlayout', ':line_share', ':topbaranimation', 'login-basic-master', 'line-skd-starter', 'zhihu'
