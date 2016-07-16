@@ -1,1 +1,1 @@
-include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch', ':flowlayout', 'login-basic-master'
+include ':app', ':smsdemo', ':facebooklogin', ':downloaddemo', ':multidownload', ':gestureandtouch', ':flowlayout', ':line_share', 'login-basic-master', 'line-skd-starter'
