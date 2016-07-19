@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Aapp</string>
+
+    <!-- login  -->
+    <string name="login_tite">Wendy Lobby</string>
+    <string name="btn_login">login</string>
+</resources>

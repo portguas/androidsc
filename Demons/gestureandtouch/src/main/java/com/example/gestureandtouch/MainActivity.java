@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         mTv = (TextView) findViewById(R.id.tv);
         mTv.setOnTouchListener(this);
         mGesDec = new GestureDetectorCompat(this, new MyGestureDector());
+        ScrollView
     }
 
     @Override
