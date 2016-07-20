@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         mTv = (TextView) findViewById(R.id.tv);
         mTv.setOnTouchListener(this);
         mGesDec = new GestureDetectorCompat(this, new MyGestureDector());
-        ScrollView
     }
 
     @Override
