@@ -22,28 +22,13 @@
             <option value="$PROJECT_DIR$/multidownload" />
             <option value="$PROJECT_DIR$/smsdemo" />
             <option value="$PROJECT_DIR$/topbaranimation" />
+            <option value="$PROJECT_DIR$/volley" />
+            <option value="$PROJECT_DIR$/volleyenclose" />
+            <option value="$PROJECT_DIR$/waterwave" />
             <option value="$PROJECT_DIR$/zhihu" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/aapp" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/cosagoda" />
-            <option value="$PROJECT_DIR$/downloaddemo" />
-            <option value="$PROJECT_DIR$/facebooklogin" />
-            <option value="$PROJECT_DIR$/flowlayout" />
-            <option value="$PROJECT_DIR$/gestureandtouch" />
-            <option value="$PROJECT_DIR$/line-skd-starter" />
-            <option value="$PROJECT_DIR$/line_share" />
-            <option value="$PROJECT_DIR$/login-basic-master" />
-            <option value="$PROJECT_DIR$/multidownload" />
-            <option value="$PROJECT_DIR$/smsdemo" />
-            <option value="$PROJECT_DIR$/topbaranimation" />
-            <option value="$PROJECT_DIR$/zhihu" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
