@@ -2,6 +2,7 @@ package commonClass;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.hyl.aapp.LoadingDialog;
+import com.example.hyl.aapp.MainActivity;
+import com.example.hyl.aapp.MainApplication;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.List;
@@ -23,6 +27,7 @@ import java.util.List;
 public class BaseActivity extends AppCompatActivity{
 
     protected static SystemBarTintManager tintManager;
+    private static Dialog dialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,5 +55,19 @@ public class BaseActivity extends AppCompatActivity{
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+    protected void showDialog() {
+        if (null == dialog) {
+            dialog = LoadingDialog.createLoadingDialog(MainApplication.getContext(), "正在加载...");
+            dialog.show();
+        }
+    }
+
+    protected void hideDialog() {
+        if (null != dialog) {
+            dialog.dismiss();
+            dialog = null;
+        }
     }
 }
