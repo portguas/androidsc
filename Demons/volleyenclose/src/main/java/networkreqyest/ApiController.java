@@ -3,6 +3,7 @@ package networkreqyest;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.example.heyulong.volleyenclose.VolleyApp;
 
 import android.text.TextUtils;
 
@@ -14,7 +15,7 @@ public class ApiController {
 
     private RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(BdApplication.getContext());
+            mRequestQueue = Volley.newRequestQueue(VolleyApp.getInstance().getContext());
         }
         return mRequestQueue;
     }

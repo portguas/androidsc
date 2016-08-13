@@ -11,27 +11,33 @@ import com.android.volley.ParseError;
 import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 
 /**
  * Created by heyulong on 8/9/2016.
  */
 
-public class VolleyNetworkRequest extends StringRequest{
+public class VolleyNetworkRequest extends JsonRequest<JSONObject>{
 
     private Priority priority = Priority.HIGH;
     private RetryPolicy retryPolicy = new DefaultRetryPolicy(3000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
 
-
-    public VolleyNetworkRequest(int method, String url, Response.Listener<String> listener,
+    public VolleyNetworkRequest(int method, String url, JSONObject jsonObject, Response.Listener<JSONObject> listener,
                                 Response.ErrorListener errorListener) {
-        super(method, url, listener, errorListener);
+        super(method, url, ((null == jsonObject) ? null : jsonObject.toString()), listener, errorListener);
         setRetryPolicy(retryPolicy);
     }
 
-    public VolleyNetworkRequest(String url, String requestBody, Response.Listener<JSONObject> listener,
+    public VolleyNetworkRequest(String url, JSONObject jsonObject, Response.Listener<JSONObject> listener,
                                 Response.ErrorListener errorListener) {
-        this(Method.GET, url, requestBody, listener, errorListener);
+        this(Method.GET, url, jsonObject, listener, errorListener);
+    }
+
+    public VolleyNetworkRequest(String url, Response.Listener<JSONObject> listener,
+                                Response.ErrorListener errorListener) {
+        this(Method.GET, url, null, listener, errorListener);
     }
 
     @Override
