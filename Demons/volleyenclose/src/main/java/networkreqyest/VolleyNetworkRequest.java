@@ -1,6 +1,8 @@
 package networkreqyest;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,15 +26,15 @@ public class VolleyNetworkRequest extends JsonRequest<JSONObject>{
     private Priority priority = Priority.HIGH;
     private RetryPolicy retryPolicy = new DefaultRetryPolicy(3000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
 
-    public VolleyNetworkRequest(int method, String url, JSONObject jsonObject, Response.Listener<JSONObject> listener,
+    public VolleyNetworkRequest(int method, String url, Map<String, String> param, Response.Listener<JSONObject> listener,
                                 Response.ErrorListener errorListener) {
-        super(method, url, ((null == jsonObject) ? null : jsonObject.toString()), listener, errorListener);
+        super(method, url, ((null == param) ? null : paramstoString(param)), listener, errorListener);
         setRetryPolicy(retryPolicy);
     }
 
-    public VolleyNetworkRequest(String url, JSONObject jsonObject, Response.Listener<JSONObject> listener,
+    public VolleyNetworkRequest(String url, Map<String, String> param, Response.Listener<JSONObject> listener,
                                 Response.ErrorListener errorListener) {
-        this(Method.GET, url, jsonObject, listener, errorListener);
+        this(Method.GET, url, param, listener, errorListener);
     }
 
     public VolleyNetworkRequest(String url, Response.Listener<JSONObject> listener,
@@ -68,5 +70,32 @@ public class VolleyNetworkRequest extends JsonRequest<JSONObject>{
         this.priority = priority;
     }
 
+    private static String paramstoString(Map<String, String> params)
+    {
+        if (params != null && params.size() > 0)
+        {
+            String paramsEncoding = "UTF-8";
+            StringBuilder encodedParams = new StringBuilder();
+            try
+            {
+                for (Map.Entry<String, String> entry : params.entrySet())
+                {
+                    encodedParams.append(URLEncoder.encode(entry.getKey(),
+                            paramsEncoding));
+                    encodedParams.append('=');
+                    encodedParams.append(URLEncoder.encode(entry.getValue(),
+                            paramsEncoding));
+                    encodedParams.append('&');
+
+                }
+                return encodedParams.toString();
+            }
+            catch (UnsupportedEncodingException uee)
+            {
+                throw new RuntimeException("Encoding not supported: " + paramsEncoding, uee);
+            }
+        }
+        return null;
+    }
 
 }

@@ -49,6 +49,11 @@ public class RequestBean implements Parcelable {
         return 0;
     }
 
+    /**
+     * 写入到Parcel对象中
+     * @param dest
+     * @param flags
+     */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.errCode);
@@ -59,6 +64,7 @@ public class RequestBean implements Parcelable {
     public RequestBean() {
     }
 
+    // 读出的顺序必须和写入的顺序一致
     protected RequestBean(Parcel in) {
         this.errCode = in.readString();
         this.errMsg = in.readString();

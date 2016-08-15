@@ -1,5 +1,7 @@
 package networkreqyest;
 
+import java.util.Map;
+
 import org.json.JSONObject;
 
 /**
@@ -13,12 +15,12 @@ public interface IGetJsonDataModel {
      * get 方式获取
      * @param url
      */
-    void getJsonDataGet(String url, JSONObject jsonObject);
+    void getJsonDataGet(RequestMsg.RequestType reqType, String url, Map<String, String> param);
 
     /**
      * Post 方式获取
      * @param url
      */
-    void getJsonDataPost(String url, JSONObject jsonObject);
+    void getJsonDataPost(RequestMsg.RequestType reqType, String url, Map<String, String> param);
 
 }

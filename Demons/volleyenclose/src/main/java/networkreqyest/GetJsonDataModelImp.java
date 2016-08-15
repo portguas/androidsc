@@ -1,5 +1,7 @@
 package networkreqyest;
 
+import java.util.Map;
+
 import org.json.JSONObject;
 
 import com.android.volley.Request;
@@ -13,6 +15,7 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
 
     private Context context;
     private IJsonDataResponse<T> iJsonDataResponse;
+    private RequestMsg.RequestType reqTyte;
 
     public Context getContext() {
         return context;
@@ -36,8 +39,8 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
      * @param url
      */
     @Override
-    public void getJsonDataGet(String url, JSONObject jsonObject) {
-        ApiController.getInstance().addToRequestQueue(getRequestForGet(url, jsonObject));
+    public void getJsonDataGet(RequestMsg.RequestType reqType, String url, Map<String, String> param) {
+        ApiController.getInstance().addToRequestQueue(getRequestForGet(reqType, url, param));
     }
 
     /**
@@ -46,32 +49,33 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
      * @param url
      */
     @Override
-    public void getJsonDataPost(String url, JSONObject jsonObject) {
-        ApiController.getInstance().addToRequestQueue(getRequestForPOST(url, jsonObject));
+    public void getJsonDataPost(RequestMsg.RequestType reqType, String url, Map<String, String> param) {
+        ApiController.getInstance().addToRequestQueue(getRequestForPOST(reqType, url, param));
     }
 
     /**
      * get 请求
      * @param url
-     * @param jsonObject
+     * @param param
      * @return
      */
-    protected VolleyNetworkRequest getRequestForGet(String url, JSONObject jsonObject) {
-        if (null == jsonObject) {
+    protected VolleyNetworkRequest getRequestForGet(RequestMsg.RequestType reqType, String url, Map<String, String> param) {
+        this.reqTyte = reqType;
+        if (null == param) {
             return new VolleyNetworkRequest(url, this, this);
         } else {
-            return new VolleyNetworkRequest(url, jsonObject, this, this);
+            return new VolleyNetworkRequest(url, param, this, this);
         }
     }
 
     /**
      * post 请求
      * @param url
-     * @param jsonObject
+     * @param param
      * @return
      */
-    protected VolleyNetworkRequest getRequestForPOST(String url, JSONObject jsonObject) {
-        return new VolleyNetworkRequest(Request.Method.POST, url, jsonObject, this, this);
+    protected VolleyNetworkRequest getRequestForPOST(RequestMsg.RequestType reqType, String url, Map<String, String> param) {
+        return new VolleyNetworkRequest(Request.Method.POST, url, param, this, this);
     }
 
     /**
@@ -110,7 +114,7 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
      */
     protected void onResonseNodify(T data) {
         if (null != iJsonDataResponse) {
-            iJsonDataResponse.onSuccess(data);
+            iJsonDataResponse.onSuccess(reqTyte, data);
         }
     }
 
@@ -121,7 +125,7 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
      */
     protected void onErrorResonseNodify(String errorCode, String errorMsg) {
         if (null != iJsonDataResponse) {
-            iJsonDataResponse.onError(errorCode, errorMsg);
+            iJsonDataResponse.onError(reqTyte, errorCode, errorMsg);
         }
     }
 }

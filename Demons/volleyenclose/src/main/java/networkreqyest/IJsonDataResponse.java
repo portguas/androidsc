@@ -10,12 +10,12 @@ public interface IJsonDataResponse<T> {
      * 获取数据成功
      * @param data
      */
-    void onSuccess(T data);
+    void onSuccess(RequestMsg.RequestType reqType, T data);
 
     /**
      * 获取数据失败
      * @param errorCode
      * @param errorMsg
      */
-    void onError(String errorCode, String errorMsg);
+    void onError(RequestMsg.RequestType reqType, String errorCode, String errorMsg);
 }
