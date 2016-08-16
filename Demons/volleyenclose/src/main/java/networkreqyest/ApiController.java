@@ -13,7 +13,7 @@ import android.text.TextUtils;
 
 public class ApiController {
 
-    private RequestQueue getRequestQueue() {
+    protected RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(VolleyApp.getInstance().getContext());
         }

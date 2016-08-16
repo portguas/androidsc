@@ -1,5 +1,7 @@
 package networkreqyest;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
@@ -16,6 +18,7 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
     private Context context;
     private IJsonDataResponse<T> iJsonDataResponse;
     private RequestMsg.RequestType reqTyte;
+    private Map<Integer, VolleyNetworkRequest> requestMap = new HashMap<>();
 
     public Context getContext() {
         return context;
@@ -40,7 +43,9 @@ public abstract class GetJsonDataModelImp<T> implements IGetJsonDataModel, Respo
      */
     @Override
     public void getJsonDataGet(RequestMsg.RequestType reqType, String url, Map<String, String> param) {
-        ApiController.getInstance().addToRequestQueue(getRequestForGet(reqType, url, param));
+        VolleyNetworkRequest request = getRequestForGet(reqType, url, param);
+        ApiController.getInstance().addToRequestQueue(request);
+        requestMap.put(ApiController.getInstance().getRequestQueue().getSequenceNumber(), request);
     }
 
     /**

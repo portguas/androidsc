@@ -97,5 +97,4 @@ public class VolleyNetworkRequest extends JsonRequest<JSONObject>{
         }
         return null;
     }
-
 }

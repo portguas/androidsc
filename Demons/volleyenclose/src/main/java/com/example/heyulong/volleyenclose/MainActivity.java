@@ -17,7 +17,6 @@ import util.SysUtil;
 
 public class MainActivity extends AppCompatActivity implements IJsonDataResponse<RequestBean>{
 
-    private IGetJsonDataModel iGetJsonDataModel;
     private GetJsonDataModelImp<RequestBean> requestBeanGetJsonDataModelImp;
     private Button button;
 
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements IJsonDataResponse
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        iGetJsonDataModel = new ReverseNetworkHelper(this);
         requestBeanGetJsonDataModelImp = new ReverseNetworkHelper(this);
         requestBeanGetJsonDataModelImp.setIJsonDataResponse(this);
         button = (Button) findViewById(R.id.button);
@@ -37,14 +35,11 @@ public class MainActivity extends AppCompatActivity implements IJsonDataResponse
                 params.put("guid", SysUtil.getUid());
                 params.put("token", "");
                 params.put("lang", SysUtil.getLanguage());
-//                iGetJsonDataModel.getJsonDataGet(RequestMsg.RequestType.LOGIN,
-//                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN.ordinal()], params);
+
                 requestBeanGetJsonDataModelImp.getJsonDataGet(RequestMsg.RequestType.LOGIN,
                         RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN.ordinal()], params);
                 requestBeanGetJsonDataModelImp.getJsonDataGet(RequestMsg.RequestType.LOGIN_START,
                         RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN_START.ordinal()], params);
-//                iGetJsonDataModel.getJsonDataGet(RequestMsg.RequestType.LOGIN_START,
-//                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN_START.ordinal()], null);
             }
         });
     }

@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/aapp" />
+            <option value="$PROJECT_DIR$/androidutil" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cosagoda" />
             <option value="$PROJECT_DIR$/downloaddemo" />
