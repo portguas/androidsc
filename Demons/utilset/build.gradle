@@ -1,15 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
+
     defaultConfig {
-        applicationId "com.personal.util"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -17,7 +19,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -29,4 +30,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+task makeJar(type: Copy) {
+    delete 'build/libs/utilset.jar'
+    from('build/intermediates/bundles/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'utilset.jar')
+}
 
+makeJar.dependsOn(build)

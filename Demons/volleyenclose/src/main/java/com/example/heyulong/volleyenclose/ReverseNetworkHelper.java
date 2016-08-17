@@ -8,13 +8,13 @@ import com.android.volley.VolleyError;
 import android.content.Context;
 import bean.RequestBean;
 import networkreqyest.GetJsonDataModelImp;
+import networkreqyest.RequestMsg;
 
 /**
  * Created by heyulong on 8/13/2016.
  */
 
 public class ReverseNetworkHelper extends GetJsonDataModelImp<RequestBean> {
-
 
     public ReverseNetworkHelper(Context context) {
         super(context);
@@ -26,7 +26,7 @@ public class ReverseNetworkHelper extends GetJsonDataModelImp<RequestBean> {
      * @param response
      */
     @Override
-    protected void disposeResponse(JSONObject response) {
+    public void disposeResponse(RequestMsg.RequestType requestType, JSONObject response) {
         RequestBean rBean = null;
         if (null != response) {
             try {
@@ -38,16 +38,16 @@ public class ReverseNetworkHelper extends GetJsonDataModelImp<RequestBean> {
                     rBean = new RequestBean();
                     rBean.setErrCode(errCode);
                     rBean.setErrMsg(result);
-                    onResonseNodify(rBean);
+                    onResonseNodify(requestType, rBean);
                 } else {
-                    onErrorResonseNodify(errCode, errMsg);
+                    onErrorResonseNodify(requestType, errCode, errMsg);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-                onErrorResonseNodify(String.valueOf(e.hashCode()), e.getMessage());
+                onErrorResonseNodify(requestType, String.valueOf(e.hashCode()), e.getMessage());
             }
         } else {
-            onErrorResonseNodify("1", "Response is null");
+            onErrorResonseNodify(requestType, "1", "Response is null");
         }
     }
 
@@ -56,7 +56,7 @@ public class ReverseNetworkHelper extends GetJsonDataModelImp<RequestBean> {
      * @param error
      */
     @Override
-    protected void disposeVolleyError(VolleyError error) {
-        onErrorResonseNodify(String.valueOf(error.hashCode()), error.getMessage());
+    public void disposeVolleyError(RequestMsg.RequestType requestType, VolleyError error) {
+        onErrorResonseNodify(requestType, String.valueOf(error.hashCode()), error.getMessage());
     }
 }

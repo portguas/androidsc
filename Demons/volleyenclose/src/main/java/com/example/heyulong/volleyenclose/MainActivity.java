@@ -3,6 +3,11 @@ package com.example.heyulong.volleyenclose;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.JSONObject;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,10 +41,35 @@ public class MainActivity extends AppCompatActivity implements IJsonDataResponse
                 params.put("token", "");
                 params.put("lang", SysUtil.getLanguage());
 
-                requestBeanGetJsonDataModelImp.getJsonDataGet(RequestMsg.RequestType.LOGIN,
-                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN.ordinal()], params);
+
                 requestBeanGetJsonDataModelImp.getJsonDataGet(RequestMsg.RequestType.LOGIN_START,
-                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN_START.ordinal()], params);
+                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN_START.ordinal()], params, new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                requestBeanGetJsonDataModelImp.disposeResponse(RequestMsg.RequestType.LOGIN_START,
+                                        response);
+
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                            }
+                        });
+
+                requestBeanGetJsonDataModelImp.getJsonDataGet(RequestMsg.RequestType.LOGIN,
+                        RequestMsg.RequestUrls[RequestMsg.RequestType.LOGIN.ordinal()], params, new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                requestBeanGetJsonDataModelImp.disposeResponse(RequestMsg.RequestType.LOGIN, response);
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        });
             }
         });
     }
