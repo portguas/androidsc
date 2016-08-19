@@ -15,3 +15,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+# 第三方库  logansqure json解析
+
+-keep class com.bluelinelabs.logansquare.** { *; }
+-keep @com.bluelinelabs.logansquare.annotation.JsonObject class *
+-keep class **$$JsonObjectMapper { *; }

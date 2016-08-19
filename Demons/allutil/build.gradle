@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+// Logan Square
+apply plugin: 'com.neenbedankt.android-apt'
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -23,11 +26,20 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha5'
     testCompile 'junit:junit:4.12'
+    compile files('libs/utilset.jar')
+    // add util need
+    // log https://github.com/orhanobut/logger
+    compile 'com.orhanobut:logger:1.15'
+    // Logan Square
+    // https://github.com/bluelinelabs/LoganSquare
+    apt 'com.bluelinelabs:logansquare-compiler:1.3.6'
+    compile 'com.bluelinelabs:logansquare:1.3.6'
+    compile project(':volley')
 }

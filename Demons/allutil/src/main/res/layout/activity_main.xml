@@ -12,9 +12,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!"
+            android:id="@+id/tv"
             app:layout_constraintBottom_toBottomOf="@+id/activity_main"
             app:layout_constraintLeft_toLeftOf="@+id/activity_main"
             app:layout_constraintRight_toRightOf="@+id/activity_main"
             app:layout_constraintTop_toTopOf="@+id/activity_main"/>
+
+    <Button
+            android:id="@+id/btn_download"
+            android:text="download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </android.support.constraint.ConstraintLayout>
