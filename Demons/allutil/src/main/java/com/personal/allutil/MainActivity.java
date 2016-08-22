@@ -28,6 +28,7 @@ import net.NetworkManager;
 
 public class MainActivity extends BaseActivity {
 
+
     private static final String JSON_TEST_URL =
             "http://api.map.baidu.com/telematics/v3/weather?location=嘉兴&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ";
 
