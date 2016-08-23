@@ -6,6 +6,7 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="E:\Program Files\Android\Android Studio\gradle\gradle-2.10" />
+<<<<<<< Updated upstream
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -34,6 +35,8 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+=======
+>>>>>>> Stashed changes
       </GradleProjectSettings>
     </option>
   </component>

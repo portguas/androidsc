@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Demons.iml" filepath="$PROJECT_DIR$/Demons.iml" />
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/aapp/aapp.iml" filepath="$PROJECT_DIR$/aapp/aapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/allutil/allutil.iml" filepath="$PROJECT_DIR$/allutil/allutil.iml" />
       <module fileurl="file://$PROJECT_DIR$/andrioid_util_git/andrioid_util_git.iml" filepath="$PROJECT_DIR$/andrioid_util_git/andrioid_util_git.iml" />
@@ -25,6 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/volleyenclose/volleyenclose.iml" filepath="$PROJECT_DIR$/volleyenclose/volleyenclose.iml" />
       <module fileurl="file://$PROJECT_DIR$/waterwave/waterwave.iml" filepath="$PROJECT_DIR$/waterwave/waterwave.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhihu/zhihu.iml" filepath="$PROJECT_DIR$/zhihu/zhihu.iml" />
+=======
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>
