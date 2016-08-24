@@ -1,6 +1,7 @@
 package com.personal.floatwindow;
 
 import android.app.Application;
+import android.content.Context;
 import android.view.WindowManager;
 
 /**
@@ -17,10 +18,41 @@ public class MyApplication extends Application {
      * 注意在AndroidManifest.xml中的Application节点添加android:name=".MyApplication"属性
      *
      */
+    private Context mAppContext;
+    private WindowManager mWindowManager;
+    private static MyApplication instance;
     private WindowManager.LayoutParams wmParams=new WindowManager.LayoutParams();
 
+    public static MyApplication getInstance() {
+        return instance;
+    }
 
-    public WindowManager.LayoutParams getMywmParams(){
+    public WindowManager.LayoutParams getWmParams(){
         return wmParams;
+    }
+
+    /**
+     * Called when the application is starting, before any activity, service,
+     * or receiver objects (excluding content providers) have been created.
+     * Implementations should be as quick as possible (for example using
+     * lazy initialization of state) since the time spent in this function
+     * directly impacts the performance of starting the first activity,
+     * service, or receiver in a process.
+     * If you override this method, be sure to call super.onCreate().
+     */
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mAppContext = getApplicationContext();
+        instance = this;
+    }
+
+    public WindowManager getWindowManager() {
+        mWindowManager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        return mWindowManager;
+    }
+
+    public Context getContext() {
+        return mAppContext;
     }
 }

@@ -21,7 +21,7 @@ public class MyFloatView extends ImageView {
     private WindowManager wm=(WindowManager)getContext().getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
 
     //此wmParams为获取的全局变量，用以保存悬浮窗口的属性
-    private WindowManager.LayoutParams wmParams = ((MyApplication)getContext().getApplicationContext()).getMywmParams();
+    private WindowManager.LayoutParams wmParams = ((MyApplication)getContext().getApplicationContext()).getWmParams();
 
     public MyFloatView(Context context) {
         super(context);

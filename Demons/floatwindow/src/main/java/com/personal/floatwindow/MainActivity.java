@@ -42,8 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Main2Activity.class));
             }
         });
-        initView();
+//        initView();
+
+        FloatViewController fvc = new FloatViewController(this, "99");
+        fvc.show();
     }
+
 
     private void initView() {
 
@@ -66,17 +70,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         LayoutInflater inflater = LayoutInflater.from(getApplication());
-        mFloatLayout = (LinearLayout) inflater.inflate(R.layout.float_layout, null);
+        mFloatLayout = (LinearLayout) inflater.inflate(R.layout.float_layout1, null);
 
         mWindowManager.addView(mFloatLayout, params);
 
         mFloatView = (Button) mFloatLayout.findViewById(R.id.btn);
+        // 这里不能用mFloatLayout.setOnTouchListener, 因为子view会消耗到touch中的事件 不会传到ViewGroup中
         mFloatView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 x = event.getRawX();
                 y = event.getRawY()-25;
+                Log.i("startP", y + "--y");
+                Log.i("startP", event.getRawY() + "--y--");
+                Log.i("startP", x + "--x");
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         mTouchStartX =  event.getX();
@@ -116,6 +124,11 @@ public class MainActivity extends AppCompatActivity {
         params.x=(int)( x-mTouchStartX);
         params.y=(int) (y-mTouchStartY);
         mWindowManager.updateViewLayout(mFloatLayout, params);
+        Log.i("startP", params.y + "--params.y");
+        Log.i("startP", params.x + "--params.x");
+        Log.i("startP", y + "--y");
+        Log.i("startP", mTouchStartY + "--mTouchStartY");
+
     }
 
     @Override

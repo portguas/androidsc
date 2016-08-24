@@ -32,7 +32,7 @@ public class Main2Activity extends AppCompatActivity {
         //获取WindowManager
         wm=(WindowManager)getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
         //设置LayoutParams(全局变量）相关参数
-        wmParams = ((MyApplication)getApplication()).getMywmParams();
+        wmParams = ((MyApplication)getApplication()).getWmParams();
 
         /**
          *以下都是WindowManager.LayoutParams的相关属性

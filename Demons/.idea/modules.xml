@@ -9,12 +9,14 @@
       <module fileurl="file://$PROJECT_DIR$/andrioid_util_git/andrioid_util_git.iml" filepath="$PROJECT_DIR$/andrioid_util_git/andrioid_util_git.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidutil/androidutil.iml" filepath="$PROJECT_DIR$/androidutil/androidutil.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/background/background.iml" filepath="$PROJECT_DIR$/background/background.iml" />
       <module fileurl="file://$PROJECT_DIR$/cosagoda/cosagoda.iml" filepath="$PROJECT_DIR$/cosagoda/cosagoda.iml" />
       <module fileurl="file://$PROJECT_DIR$/downloaddemo/downloaddemo.iml" filepath="$PROJECT_DIR$/downloaddemo/downloaddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/facebooklogin/facebooklogin.iml" filepath="$PROJECT_DIR$/facebooklogin/facebooklogin.iml" />
       <module fileurl="file://$PROJECT_DIR$/floatwindow/floatwindow.iml" filepath="$PROJECT_DIR$/floatwindow/floatwindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/flowlayout/flowlayout.iml" filepath="$PROJECT_DIR$/flowlayout/flowlayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/gestureandtouch/gestureandtouch.iml" filepath="$PROJECT_DIR$/gestureandtouch/gestureandtouch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/line-skd-starter/line-skd-starter.iml" filepath="$PROJECT_DIR$/line-skd-starter/line-skd-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/line_share/line_share.iml" filepath="$PROJECT_DIR$/line_share/line_share.iml" />
       <module fileurl="file://$PROJECT_DIR$/login-basic-master/login-basic-master.iml" filepath="$PROJECT_DIR$/login-basic-master/login-basic-master.iml" />
