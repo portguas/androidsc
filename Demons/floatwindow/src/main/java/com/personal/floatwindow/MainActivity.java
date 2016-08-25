@@ -3,6 +3,7 @@ package com.personal.floatwindow;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         FloatViewController fvc = new FloatViewController(this, "99");
         fvc.show();
+        TextInputEditText textInputEditText = new TextInputEditText(this);
     }
 
 

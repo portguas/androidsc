@@ -4,10 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <permission
-            android:name="android.permission.ACCESS_ALL_DOWNLOADS"
-            android:label="@string/permlab_accessAllDownloads"
-            android:protectionLevel="signature"/>
     <application
         android:name=".DownloadApp"
         android:allowBackup="true"
