@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">recycleViewDemo</string>
+    <string name="menu_night_mode">夜间模式</string>
+    <string name="menu_night_mode_system">系统</string>
+    <string name="menu_night_mode_day">白天</string>
+    <string name="menu_night_mode_night">夜晚</string>
+    <string name="menu_night_mode_auto">自动</string>
+    <string name="title_activity_recycle_details">RecycleDetailsActivity</string>
+</resources>

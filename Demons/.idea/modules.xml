@@ -24,6 +24,7 @@
       <module fileurl="file://$PROJECT_DIR$/multidownload/multidownload.iml" filepath="$PROJECT_DIR$/multidownload/multidownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/newmaterialcontrol/newmaterialcontrol.iml" filepath="$PROJECT_DIR$/newmaterialcontrol/newmaterialcontrol.iml" />
       <module fileurl="file://$PROJECT_DIR$/processhold/processhold.iml" filepath="$PROJECT_DIR$/processhold/processhold.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recycleviewdemo/recycleviewdemo.iml" filepath="$PROJECT_DIR$/recycleviewdemo/recycleviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/smsdemo/smsdemo.iml" filepath="$PROJECT_DIR$/smsdemo/smsdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/topbaranimation/topbaranimation.iml" filepath="$PROJECT_DIR$/topbaranimation/topbaranimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/touchevent/touchevent.iml" filepath="$PROJECT_DIR$/touchevent/touchevent.iml" />
