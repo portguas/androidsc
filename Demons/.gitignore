@@ -1,34 +1,31 @@
-# Android generated
-bin/
-gen/
-
-# Ant
-build.xml
-local.properties
-
-# Maven
-target/
-pom.xml.*
-release.properties
-
-# Eclipse
-.classpath
-.project
-.externalToolBuilders/
-
-# IntelliJ
+#IntelliJ IDEA
+.idea
 *.iml
 *.ipr
 *.iws
-.idea/
-out/
 
-# Mac
-.DS_Store
-
-# Ignore gradle files
+#Gradle
 .gradle/
 build/
 
-# Private
-signing.properties
+#Local configuration file
+local.properties
+
+#Build application files
+*.apk
+*.ap_
+
+#Android Studio Navigation editor temp files
+.navigation/
+
+#generated files
+bin/
+gen/
+out
+lib
+
+# Log Files
+*.log
+.DS_Store
+credential.properties
+/captures
