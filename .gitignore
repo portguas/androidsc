@@ -1,38 +1,31 @@
 #IntelliJ IDEA
-.idea 
-*.iml 
-*.ipr 
+.idea
+*.iml
+*.ipr
 *.iws
 
 #Gradle
-.gradle 
-gradlew.bat 
+.gradle/
 build/
-build.gradle
-settings.gradle
 
 #Local configuration file
-local.properties 
-reports 
-/captures 
-jacoco.exec
+local.properties
 
 #Build application files
-*.apk 
+*.apk
 *.ap_
 
 #Android Studio Navigation editor temp files
 .navigation/
 
 #generated files
-bin/ 
-gen/ 
-out 
+bin/
+gen/
+out
 lib
 
-#Eclipse project files
-classpath 
-.project 
-.settings/ 
-eclipsebin 
-.metadata/
+# Log Files
+*.log
+.DS_Store
+credential.properties
+/captures
